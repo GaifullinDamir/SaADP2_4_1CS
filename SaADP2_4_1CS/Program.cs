@@ -26,8 +26,9 @@ namespace SaADP2_4_1CS
         {
             for (int i = 0; i < arraySize; i++)
             {
-                Console.Write($"{i} - {hashTable[i]} , ");
+                Console.Write($" | {i} - {hashTable[i]}");
             }
+            Console.WriteLine();
         }
         public static int KeySearch(string key, string[] hashTable)
         {
@@ -74,6 +75,7 @@ namespace SaADP2_4_1CS
             {
                 PrintHashTable(hashTable);
             }
+
             else
                 Console.WriteLine("Хеш таблица пуста.");
         }
@@ -113,7 +115,7 @@ namespace SaADP2_4_1CS
                         PrintMenu();
                         break;
                     case 1:
-                        CreateHashTable(ref hashTable, keys);
+                        CreateHashTable(ref hashTable, keys); Console.WriteLine("Хеш таблица заполнена.");
                         break;
                     case 2:
                         CasePrint(hashTable);
