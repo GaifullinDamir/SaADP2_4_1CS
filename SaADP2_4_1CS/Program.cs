@@ -15,29 +15,34 @@ namespace SaADP2_4_1CS
             }
             return code % arraySize;
         }
-
-        public static void createHashTable(ref string[] hashTable, string[] keys)
+        public static void CreateHashTable(ref string[] hashTable, string[] keys)
         {
             for (int i = 0; i < arraySize; i++)
             {
                 hashTable[Hash(keys[i])] = keys[i];
             }
         }
-
-        public static void printHashTable(string[] hashTable)
+        public static void PrintHashTable(string[] hashTable)
         {
             for (int i = 0; i < arraySize; i++)
             {
                 Console.Write($"{i} - {hashTable[i]} , ");
             }
         }
-
+        public static bool KeyCheck(string key, string[] hashTable)
+        {
+            if (hashTable[Hash(key)] == key)
+            {
+                return true;
+            }
+            return false;
+        }
         static void Main(string[] args)
         {
             string[] keys = { "WHILE", "AND", "RETURN", "STRUct", "OUT", "Ref", "FOREACH", "PROGRAM", "THEN", "Class" };
             string[] hashTable = new string[arraySize];
-            createHashTable(ref hashTable, keys);
-            printHashTable(hashTable);
+            CreateHashTable(ref hashTable, keys);
+            PrintHashTable(hashTable);
         }
 
     }
